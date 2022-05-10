@@ -1,0 +1,48 @@
+Springboard Capstone 3
+Ray Karpman
+05/10/2022
+
+Model Metrics
+
+Features:
+
+- PPERSAUT: total contributions to insurance policies in postcal code
+- MOSHOOFD: customer type (10 options)
+- MINKGEM: average income
+- MOPLLAAG: percent of people in postal code with a low education level
+- MAUT1: percent with one car
+
+Labels: 
+
+CARAVAN. The positive class 1 indicates 
+that there is at least one caravan insurance policy in the postcal code.
+
+Algorithm: 
+
+K-means clustering on features, followed by fitting a decision tree
+for each cluster to predict whether a record would fall into that class.
+Used sklearn KMeans and DecisionTreeClassifier.
+
+Hyperparameters:
+
+For clutering: n_clusters = 3
+For tree to predict Cluster 0: min_impurity_decrease = 0.01
+For tree to predict Cluster 1: min_impurity_decrease = 0.025
+For tree to predict Cluster 0: min_impurity_decrease = 0.025
+
+Silhouette score for clustering: 0.24
+
+Performance of trees on test data:
+
+Tree to predict Cluster 0: 
+- precision: 0.88
+- recall: 0.88
+
+Tree to predict Cluster 1:
+- precision: 0.90
+- recall: 0.93
+
+Tree to predict Cluster 2:
+- precision: 0.91
+- recall: 0.95
+
